@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[CDCountriesSelectorSingleView didMoveToSuperview]:CDCountriesSelectorSingleView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self superview];">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CDCountriesSelectorSingleView addCountries]:CDCountriesSelectorSingleView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "countrySize*(j - 1);">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CDCountriesSelectorView drawRect:]:CDCountriesSelectorView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[CDRootViewController loadPage:]:CDRootViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollViewPositions">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CDCountriesSelectorView setupPagesForAllCountries]:CDCountriesSelectorView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[links count] - i">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

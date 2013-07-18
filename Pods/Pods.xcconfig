@@ -1,0 +1,11 @@
+#include "Pods-AFNetworking.xcconfig"
+#include "Pods-ASIHTTPRequest.xcconfig"
+#include "Pods-MBProgressHUD.xcconfig"
+#include "Pods-Reachability.xcconfig"
+#include "Pods-SDWebImage.xcconfig"
+#include "Pods-ViewDeck.xcconfig"
+#include "Pods-libwebp.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/ASIHTTPRequest" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/Reachability" "${PODS_ROOT}/Headers/SDWebImage" "${PODS_ROOT}/Headers/ViewDeck" "${PODS_ROOT}/Headers/libwebp" "${PODS_ROOT}/Headers/libwebp/webp" ${PODS_ASIHTTPREQUEST_HEADER_SEARCH_PATHS}
+OTHER_LDFLAGS = -ObjC ${PODS_AFNETWORKING_OTHER_LDFLAGS} ${PODS_ASIHTTPREQUEST_OTHER_LDFLAGS} ${PODS_MBPROGRESSHUD_OTHER_LDFLAGS} ${PODS_REACHABILITY_OTHER_LDFLAGS} ${PODS_SDWEBIMAGE_OTHER_LDFLAGS} ${PODS_VIEWDECK_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}/Pods
