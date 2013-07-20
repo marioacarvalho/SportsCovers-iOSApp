@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CDRemoteControlledBidirectionalScrollView.h"
 #import "CDBidirectionalScrollView.h"
 #import "CDCountriesControlView.h"
 #import "CDCountriesSelectorView.h"
@@ -30,12 +31,14 @@
 @property (weak, nonatomic) IBOutlet CDCustomFontLabel *currentMonthLabel;
 @property (strong, nonatomic) IBOutlet CDBidirectionalScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet CDCountriesControlView *countriesView;
+
 @property (strong, nonatomic) CDCountriesSelectorView *countriesSelectorView;
 @property (weak, nonatomic) IBOutlet ADBannerView *iAdBanner;
+@property (strong, nonatomic) IBOutlet CDRemoteControlledBidirectionalScrollView *countriesBidirectionalScrollView;
 
 @property (nonatomic, strong) NSArray *pageImages;
 @property (nonatomic, strong) NSMutableArray *pageViews;
+
 - (IBAction)countriesAction:(id)sender;
 
 @end

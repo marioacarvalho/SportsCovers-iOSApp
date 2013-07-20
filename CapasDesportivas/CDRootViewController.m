@@ -14,8 +14,21 @@
 #import "iAd/iAd.h"
 #import "CDAppDelegate.h"
 
+typedef enum ScrollDirection {
+    ScrollDirectionNone,
+    ScrollDirectionRight,
+    ScrollDirectionLeft,
+    ScrollDirectionUp,
+    ScrollDirectionDown,
+    ScrollDirectionCrazy,
+} ScrollDirection;
+
 @interface CDRootViewController ()
-    
+
+@property (nonatomic, assign) NSInteger lastContentOffsetX;
+@property (nonatomic, assign) NSInteger lastContentOffsetY;
+
+
 @end
 
 @implementation CDRootViewController
@@ -67,12 +80,19 @@
 - (void)viewDidLoad
 {
 
-    
+    _lastContentOffsetX = 0;
+    _lastContentOffsetY = 0;
     selectedCountryID = 173;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *data = [defaults objectForKey:kApplicationLinks];
     NSArray *links = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    _scrollView = [[CDBidirectionalScrollView alloc] initWithFrame:_scrollView.frame andWithArray:links];
+    self.scrollView = [[CDBidirectionalScrollView alloc] initWithFrame:_scrollView.frame andWithArray:links];
+    
+    self.countriesBidirectionalScrollView.scrollViewData = links;
+    [self.countriesBidirectionalScrollView setBackgroundColor:[UIColor clearColor]];
+    self.countriesBidirectionalScrollView.delegate = self;
+    [self.countriesBidirectionalScrollView setNeedsDisplay];
+    
     #ifdef FREE_VERSION
         [_iAdBanner setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
         _iAdBanner.delegate = self;
@@ -97,220 +117,19 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setDateFormat:@"MMM"];
+    NSString  *x = [formatter stringFromDate:[NSDate date]];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+;
+    NSInteger day = [components day];
+    [_currentDayLabel setText:[NSString stringWithFormat:@"%d", day]];
+    [_currentMonthLabel setText:[x lowercaseString]];
 
 }
 
-- (void)setupScrollView
-{
-    
-    
-    
-    self.pageImages = [self setupPagesForSelectedCountrie];
-    
-    NSInteger pageCount = self.pageImages.count;
-    
-    // 2
-    self.pageControl.currentPage = 0;
-    self.pageControl.numberOfPages = pageCount;
-    
-    // 3
-    self.pageViews = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < pageCount; ++i) {
-        [self.pageViews addObject:[NSNull null]];
-    }
 
-}
-
-- (NSArray *)setupPagesForSelectedCountrie
-{
-    NSMutableArray *mutArray = [NSMutableArray new];
-    NSMutableArray *allData = [NSMutableArray new];
-    
-    NSMutableArray *tmpAllPositions = [NSMutableArray new];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *data = [defaults objectForKey:kApplicationLinks];
-    NSArray *links = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    int collumn = 1;
-    int row = 1;
-    int tmpCountrie = 0;
-    for (NSDictionary *newspaper in links) {
-        
-        if (tmpCountrie == 0 || tmpCountrie == [[newspaper objectForKey:@"id"] intValue]) {
-            tmpCountrie = [[newspaper objectForKey:@"id"] intValue];
-            NSDictionary *info = @{@"countryID": [newspaper objectForKey:@"id"],
-                                   @"row": [NSString stringWithFormat:@"%d", row],
-                                   @"collumn": [NSString stringWithFormat:@"%d", collumn]};
-            row++;
-            [tmpAllPositions addObject:info];
-
-        } else {
-            collumn++;
-            row = 1;
-            tmpCountrie = [[newspaper objectForKey:@"id"] intValue];
-            NSDictionary *info = @{@"countryID": [newspaper objectForKey:@"id"],
-                                   @"row": [NSString stringWithFormat:@"%d", row],
-                                   @"collumn": [NSString stringWithFormat:@"%d", collumn]};
-            row++;
-            [tmpAllPositions addObject:info];
-
-        }
-        if ([[newspaper objectForKey:@"id"] intValue] == selectedCountryID) {
-            [allData addObject:newspaper];
-            UIImageView *image = [[UIImageView alloc] init];
-            [image setImageWithURL:[NSURL URLWithString:[newspaper valueForKey:@"coverURL"]]];
-            [image setupImageViewer];
-            [mutArray addObject:image];
-        }
-        
-       // }
-            
-
-    }
-    _myArray = allData;
-    _countriesView.pageViews = links;
-    scrollViewPositions = tmpAllPositions;
-    return mutArray;
-    
-    
-}
-
-- (NSArray *)setupPagesForAllCountries_
-{
-    NSMutableArray *mutArray = [NSMutableArray new];
-    NSMutableArray *allData = [NSMutableArray new];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *data = [defaults objectForKey:kApplicationLinks];
-    NSArray *links = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    for (NSDictionary *newspaper in links) {
-        
-        
-    }
-    _myArray = allData;
-    _countriesView.pageViews = links;
-    return mutArray;
-    
-    
-}
-
-- (void)loadPage:(NSInteger)page {
-    if (page < 0 || page >= self.pageImages.count) {
-        // If it's outside the range of what you have to display, then do nothing
-        return;
-    }
-    
-    
-    // 1
-    UIImageView *pageView = [self.pageViews objectAtIndex:page];
-    if ((NSNull*)pageView == [NSNull null]) {
-        // 2
-        NSDictionary *positionInformation = [scrollViewPositions objectAtIndex:page];
-        
-        int collumn = [[positionInformation objectForKey:@"collumn"] intValue];
-        int row = [[positionInformation objectForKey:@"row"] intValue];
-
-        CGRect frame = self.scrollView.bounds;
-        frame.origin.x = 0.0f + (frame.size.width*(collumn-1));
-        frame.origin.y = frame.size.height * (row-1);
-        
-        // 3
-        UIImageView *NewView = (UIImageView *)[self.pageImages objectAtIndex:page];
-        [NewView setFrame:CGRectMake(frame.origin.x, frame.origin.y, kCoverSupporterWidth, kCoverSupporterHeight)];
-        [self.scrollView addSubview:NewView];
-        // 4
-        [self.pageViews replaceObjectAtIndex:page withObject:NewView];
-    }
-}
-
-- (void)loadVisiblePages {
-    // First, determine which page is currently visible
-    CGFloat pageHeight = self.scrollView.frame.size.height;
-    NSInteger page = (NSInteger)floor((self.scrollView.contentOffset.y * 2.0f + pageHeight) / (pageHeight * 2.0f));
-    
-    // Update the page control
-    self.pageControl.currentPage = page;
-
-    if (page != currentPage) {
-        if (page > currentPage) {
-            NSDictionary *information = [self getCountrieInfoFor:1];
-            [_countriesView goForwardWithInformation:information];
-        } else {
-            NSDictionary *information = [self getCountrieInfoFor:0];
-            [_countriesView goBackwardWithInformation:information];
-
-        }
-        currentPage = page;
-    }
-
-    // Work out which pages you want to load
-    NSInteger firstPage = page - 1;
-    NSInteger lastPage = page + 1;
-    
-    // Purge anything before the first page
-    for (NSInteger i=0; i<firstPage; i++) {
-        [self purgePage:i];
-    }
-    
-	// Load pages in our range
-    for (NSInteger i=firstPage; i<=lastPage; i++) {
-        [self loadPage:i];
-    }
-    
-	// Purge anything after the last page
-    for (NSInteger i=lastPage+1; i<self.pageImages.count; i++) {
-        [self purgePage:i];
-    }
-    
-}
-
-- (NSDictionary *)getCountrieInfoFor:(int)up
-//if up = 1, going to right
-{
-    NSDictionary *dic = [NSDictionary new];
-    switch (up) {
-        case 0:
-            if (currentPage-2 >= 0) {
-                dic = [_myArray objectAtIndex:currentPage-2];
-            }
-            break;
-        case 1:
-            if ([_myArray count] > currentPage+2) {
-                dic = [_myArray objectAtIndex:currentPage+2];
-            }
-            break;
-        default:
-            break;
-    }
-    return dic;
-}
-
-- (void)purgePage:(NSInteger)page {
-    if (page < 0 || page >= self.pageImages.count) {
-        // If it's outside the range of what you have to display, then do nothing
-        return;
-    }
-    
-    // Remove a page from the scroll view and reset the container array
-    UIView *pageView = [self.pageViews objectAtIndex:page];
-    if ((NSNull*)pageView != [NSNull null]) {
-        [pageView removeFromSuperview];
-        [self.pageViews replaceObjectAtIndex:page withObject:[NSNull null]];
-    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // Load the pages that are now on screen
-    [self loadVisiblePages];
-}
 
 -(void)setupGesturesForCountries
 {
@@ -399,11 +218,13 @@
         }
     }
 }
+
 /*
  *
  * iAds
  *
  */
+
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
     NSLog(@"ok bannerView\n");
@@ -456,5 +277,14 @@
     [bannerView_ loadRequest:request];
     
 }
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat countriesOffsetX = (scrollView.contentOffset.x * _countriesBidirectionalScrollView.bounds.size.width)/scrollView.bounds.size.width;
+    NSLog(@"%f\n", countriesOffsetX);
+    [_countriesBidirectionalScrollView scrollRectToVisible:CGRectMake(countriesOffsetX, 0, _countriesBidirectionalScrollView.frame.size.width, _countriesBidirectionalScrollView.frame.size.height) animated:NO];
+}
+
+
 
 @end

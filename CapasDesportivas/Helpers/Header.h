@@ -11,6 +11,8 @@
 
 //DEFINES
 
+#define kCountriesNeedsVerticalScroll @"CountriesNeedsVerticalScroll"
+
 #define kCoverSupporterHeight   290
 #define kCoverSupporterWidth    205  
 

@@ -7,7 +7,8 @@
 //
 
 #import "CDBidirectionalScrollView.h"
-#import "CDVerticalPaginatedScrollView.h"
+
+
 
 @implementation CDBidirectionalScrollView
 {
@@ -72,18 +73,38 @@
     NSData *data = [defaults objectForKey:kApplicationLinks];
     NSArray *links = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     int collumn = 0;
+    int row = 0;
     int tmpCountrie = 0;
     for (NSDictionary *newspaper in links) {
         if (tmpCountrie == 0 || tmpCountrie == [[newspaper objectForKey:@"id"] intValue]) {
             [tmpCollumnArray addObject:newspaper];
             tmpCountrie = [[newspaper objectForKey:@"id"] intValue];
-        } else {
+            row++;
+        } else if (row == [links count]-1) {
             CDVerticalPaginatedScrollView *newScrollView = [self setupVerticalScrollViewForIndex:collumn andInfoNewspapers:tmpCollumnArray];
+            newScrollView.collumn = collumn;
+            newScrollView.scrollDelegate = self;
             [self addSubview:newScrollView];
             collumn++;
             tmpCollumnArray = [NSMutableArray new];
             [tmpCollumnArray addObject:newspaper];
             tmpCountrie = [[newspaper objectForKey:@"id"] intValue];
+            CDVerticalPaginatedScrollView *newScrollView2 = [self setupVerticalScrollViewForIndex:collumn andInfoNewspapers:tmpCollumnArray];
+            newScrollView2.collumn = collumn;
+            newScrollView2.scrollDelegate = self;
+            [self addSubview:newScrollView2];
+            collumn++;
+            
+        }else {
+            CDVerticalPaginatedScrollView *newScrollView = [self setupVerticalScrollViewForIndex:collumn andInfoNewspapers:tmpCollumnArray];
+            newScrollView.collumn = collumn;
+            newScrollView.scrollDelegate = self;
+            [self addSubview:newScrollView];
+            collumn++;
+            tmpCollumnArray = [NSMutableArray new];
+            [tmpCollumnArray addObject:newspaper];
+            tmpCountrie = [[newspaper objectForKey:@"id"] intValue];
+            row++;
         }
 
         
@@ -102,10 +123,13 @@
     return verticalScrollView;
 }
 
--(void)goRight
+-(void)scrolledToContentOffSetY:(CGFloat)newContentY forCollumn:(int)currentCollumn
 {
-    _currentCollumn++;
-    [self setContentOffset:CGPointMake(self.frame.size.width*_currentCollumn, 0)];
+    NSDictionary *info = @{@"newContentY": [NSString stringWithFormat:@"%f", newContentY],
+                           @"currentCollumn":[NSString stringWithFormat:@"%d", currentCollumn]};
+    [[NSNotificationCenter defaultCenter] postNotificationName:kCountriesNeedsVerticalScroll object:info];
 }
+
+
 
 @end

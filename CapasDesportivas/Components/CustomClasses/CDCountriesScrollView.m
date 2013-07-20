@@ -1,17 +1,19 @@
-
 //
-//  CDVerticalPaginatedScrollView.m
+//  CDCountriesScrollView.m
 //  SportsCovers
 //
-//  Created by Developer on 7/17/13.
+//  Created by Developer on 7/18/13.
 //  Copyright (c) 2013 Developer. All rights reserved.
 //
 
-#import "CDVerticalPaginatedScrollView.h"
+#import "CDCountriesScrollView.h"
+#import "CDCountryNameAndNewsPaperNameView.h"
 #import "MHFacebookImageViewer.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@implementation CDVerticalPaginatedScrollView
+
+
+@implementation CDCountriesScrollView
 {
     NSArray *_scrollViewData;
 }
@@ -21,8 +23,9 @@
     if (self) {
         // Initialization code
         _scrollViewData = info;
-         [self setupScrollView];
-
+        [self setBackgroundColor:[UIColor clearColor]];
+        
+        
     }
     return self;
 }
@@ -32,34 +35,19 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+    [self setupScrollView];
     // Drawing code
-     [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundColor:[UIColor clearColor]];
     self.delegate = self;
     CGSize pagesScrollViewSize = self.frame.size;
     self.contentSize = CGSizeMake(pagesScrollViewSize.width, pagesScrollViewSize.height * self.pageImages.count);
     [self setPagingEnabled:YES];
     // 5
     [self loadVisiblePages];
-
-}
-
-
-- (void)viewDidLoad
-{
-
-    
-    
-    /**/
-    
-   
-    
-    
     
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-}
+
 
 - (void)setupScrollView
 {
@@ -85,19 +73,20 @@
 - (NSArray *)setupPagesForSelectedCountry
 {
     NSMutableArray *mutArray = [NSMutableArray new];
-
+    
     NSArray *links = _scrollViewData;
-
+    if  ([[[_scrollViewData lastObject] objectForKey:@"country"]isEqualToString:@"173"]) {
+        NSLog(@"wait");
+    }
     for (NSDictionary *newspaper in links) {
         
-
-            UIImageView *image = [[UIImageView alloc] init];
-            [image setImageWithURL:[NSURL URLWithString:[newspaper valueForKey:@"coverURL"]]];
-            [image setupImageViewer];
-            [mutArray addObject:image];
-    
+        CDCountryNameAndNewsPaperNameView *view = [[CDCountryNameAndNewsPaperNameView alloc] initWithFrame:CGRectMake(0,0,self.frame.size.width,self.frame.size.height)];
+        view.options = newspaper;
+        [mutArray addObject:view];
+        
         
     }
+    
     return mutArray;
     
     
@@ -115,14 +104,14 @@
     UIImageView *pageView = [self.pageViews objectAtIndex:page];
     if ((NSNull*)pageView == [NSNull null]) {
         // 2
-               
+        
         CGRect frame = self.bounds;
         frame.origin.x = 0.0f;
         frame.origin.y = frame.size.height * page;
         
         // 3
-        UIImageView *NewView = (UIImageView *)[self.pageImages objectAtIndex:page];
-        [NewView setFrame:CGRectMake(frame.origin.x, frame.origin.y, kCoverSupporterWidth, kCoverSupporterHeight)];
+        CDCountryNameAndNewsPaperNameView *NewView = (CDCountryNameAndNewsPaperNameView *)[self.pageImages objectAtIndex:page];
+        [NewView setFrame:CGRectMake(frame.origin.x, frame.origin.y, self.frame.size.width,self.frame.size.height)];
         [self addSubview:NewView];
         // 4
         [self.pageViews replaceObjectAtIndex:page withObject:NewView];
@@ -137,7 +126,7 @@
     // Update the page control
     self.pageControl.currentPage = page;
     
-
+    
     
     // Work out which pages you want to load
     NSInteger firstPage = page - 1;
@@ -178,8 +167,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // Load the pages that are now on screen
     [self loadVisiblePages];
-    [self.scrollDelegate scrolledToContentOffSetY:scrollView.contentOffset.y forCollumn:_collumn];
 }
-
 
 @end

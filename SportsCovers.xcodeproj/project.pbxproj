@@ -14,6 +14,14 @@
 		8B0277A51788578200EAF349 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0277A41788578200EAF349 /* QuartzCore.framework */; };
 		8B0277AA17885E8D00EAF349 /* MHFacebookImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0277A917885E8D00EAF349 /* MHFacebookImageViewer.m */; };
 		8B0278091788800100EAF349 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B02780517887FCD00EAF349 /* libTestFlight.a */; };
+		8B075EEB17989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075EEA17989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.m */; };
+		8B075EEC17989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075EEA17989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.m */; };
+		8B075EF91798A490008D4D1E /* CDCountryNameAndNewsPaperNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075EF81798A490008D4D1E /* CDCountryNameAndNewsPaperNameView.m */; };
+		8B075EFA1798A490008D4D1E /* CDCountryNameAndNewsPaperNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075EF81798A490008D4D1E /* CDCountryNameAndNewsPaperNameView.m */; };
+		8B075EFD1798A63A008D4D1E /* CDFlagAndScrollableContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075EFC1798A63A008D4D1E /* CDFlagAndScrollableContentView.m */; };
+		8B075EFE1798A63A008D4D1E /* CDFlagAndScrollableContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075EFC1798A63A008D4D1E /* CDFlagAndScrollableContentView.m */; };
+		8B075F011798A65E008D4D1E /* CDCountriesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075F001798A65E008D4D1E /* CDCountriesScrollView.m */; };
+		8B075F021798A65E008D4D1E /* CDCountriesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075F001798A65E008D4D1E /* CDCountriesScrollView.m */; };
 		8B3197BF178640CB00E0A8D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3197BE178640CB00E0A8D1 /* Foundation.framework */; };
 		8B3197C1178640CB00E0A8D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3197C0178640CB00E0A8D1 /* CoreGraphics.framework */; };
 		8B3197C3178640CB00E0A8D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3197C2178640CB00E0A8D1 /* UIKit.framework */; };
@@ -130,6 +138,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8B075EF517989DE7008D4D1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BEF7576178843890015E07F /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F27A8E55DCD44C88BD6B368E;
+			remoteInfo = "Pods-ViewDeck";
+		};
 		8B736048178877820067008C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BEF7576178843890015E07F /* Pods.xcodeproj */;
@@ -196,6 +211,14 @@
 		8B02780617887FCD00EAF349 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8B02780717887FCD00EAF349 /* release_notes.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		8B02780817887FCD00EAF349 /* TestFlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		8B075EE917989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDRemoteControlledBidirectionalScrollView.h; path = Components/CustomClasses/CDRemoteControlledBidirectionalScrollView.h; sourceTree = "<group>"; };
+		8B075EEA17989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDRemoteControlledBidirectionalScrollView.m; path = Components/CustomClasses/CDRemoteControlledBidirectionalScrollView.m; sourceTree = "<group>"; };
+		8B075EF71798A490008D4D1E /* CDCountryNameAndNewsPaperNameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCountryNameAndNewsPaperNameView.h; sourceTree = "<group>"; };
+		8B075EF81798A490008D4D1E /* CDCountryNameAndNewsPaperNameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCountryNameAndNewsPaperNameView.m; sourceTree = "<group>"; };
+		8B075EFB1798A63A008D4D1E /* CDFlagAndScrollableContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFlagAndScrollableContentView.h; sourceTree = "<group>"; };
+		8B075EFC1798A63A008D4D1E /* CDFlagAndScrollableContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFlagAndScrollableContentView.m; sourceTree = "<group>"; };
+		8B075EFF1798A65E008D4D1E /* CDCountriesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDCountriesScrollView.h; path = Components/CustomClasses/CDCountriesScrollView.h; sourceTree = "<group>"; };
+		8B075F001798A65E008D4D1E /* CDCountriesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDCountriesScrollView.m; path = Components/CustomClasses/CDCountriesScrollView.m; sourceTree = "<group>"; };
 		8B3197BB178640CB00E0A8D1 /* SportsCovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsCovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B3197BE178640CB00E0A8D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8B3197C0178640CB00E0A8D1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -548,6 +571,10 @@
 				8B852DF21789D13A0095A41F /* CDCustomFontLabel.m */,
 				8B4C800A178A2876001FAE80 /* CHAvatarView.h */,
 				8B4C800B178A2876001FAE80 /* CHAvatarView.m */,
+				8B075EE917989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.h */,
+				8B075EEA17989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.m */,
+				8B075EFF1798A65E008D4D1E /* CDCountriesScrollView.h */,
+				8B075F001798A65E008D4D1E /* CDCountriesScrollView.m */,
 				8B8588A81797550C00D33FF3 /* CDBidirectionalScrollView.h */,
 				8B8588A91797550C00D33FF3 /* CDBidirectionalScrollView.m */,
 				8B8588B3179755F700D33FF3 /* CDVerticalPaginatedScrollView.h */,
@@ -576,6 +603,10 @@
 				8BCBA7F2178A0E6300F53A7A /* CDCountriesControlView.m */,
 				8BCBA7E11789FBEF00F53A7A /* CDMainCoverView.h */,
 				8BCBA7E21789FBEF00F53A7A /* CDMainCoverView.m */,
+				8B075EF71798A490008D4D1E /* CDCountryNameAndNewsPaperNameView.h */,
+				8B075EF81798A490008D4D1E /* CDCountryNameAndNewsPaperNameView.m */,
+				8B075EFB1798A63A008D4D1E /* CDFlagAndScrollableContentView.h */,
+				8B075EFC1798A63A008D4D1E /* CDFlagAndScrollableContentView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -596,6 +627,7 @@
 				8BEF757D178843890015E07F /* libPods-MBProgressHUD.a */,
 				8B73606217887A230067008C /* libPods-Reachability.a */,
 				8B73606417887A230067008C /* libPods-SDWebImage.a */,
+				8B075EF617989DE7008D4D1E /* libPods-ViewDeck.a */,
 				8B73606617887A230067008C /* libPods-libwebp.a */,
 				8BEF757F178843890015E07F /* libPods.a */,
 			);
@@ -688,6 +720,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		8B075EF617989DE7008D4D1E /* libPods-ViewDeck.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-ViewDeck.a";
+			remoteRef = 8B075EF517989DE7008D4D1E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		8B736049178877820067008C /* libPods-AFNetworking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -898,6 +937,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B075EF91798A490008D4D1E /* CDCountryNameAndNewsPaperNameView.m in Sources */,
 				8BCFA3A3178E0BC100AA03EB /* CDCountriesSelectorView.m in Sources */,
 				8BCFA3A6178E2FD900AA03EB /* CDCountriesSelectorSingleView.m in Sources */,
 				8B8588B5179755F700D33FF3 /* CDVerticalPaginatedScrollView.m in Sources */,
@@ -912,8 +952,11 @@
 				8B4C800C178A2876001FAE80 /* CHAvatarView.m in Sources */,
 				8B3197CB178640CB00E0A8D1 /* main.m in Sources */,
 				8BCBA7F5178A0EED00F53A7A /* CDCountrieView.m in Sources */,
+				8B075F011798A65E008D4D1E /* CDCountriesScrollView.m in Sources */,
+				8B075EEB17989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.m in Sources */,
 				8B4C8002178A185C001FAE80 /* CDCountriesControlView.m in Sources */,
 				8B3197CF178640CB00E0A8D1 /* CDAppDelegate.m in Sources */,
+				8B075EFD1798A63A008D4D1E /* CDFlagAndScrollableContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,6 +964,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B075EFA1798A490008D4D1E /* CDCountryNameAndNewsPaperNameView.m in Sources */,
 				8B43683A17960A14006D2C05 /* CDCountriesSelectorView.m in Sources */,
 				8B43683B17960A14006D2C05 /* CDCountriesSelectorSingleView.m in Sources */,
 				8B8588B6179755F700D33FF3 /* CDVerticalPaginatedScrollView.m in Sources */,
@@ -935,8 +979,11 @@
 				8B43684317960A14006D2C05 /* CHAvatarView.m in Sources */,
 				8B43684417960A14006D2C05 /* main.m in Sources */,
 				8B43684517960A14006D2C05 /* CDCountrieView.m in Sources */,
+				8B075F021798A65E008D4D1E /* CDCountriesScrollView.m in Sources */,
+				8B075EEC17989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.m in Sources */,
 				8B43684617960A14006D2C05 /* CDCountriesControlView.m in Sources */,
 				8B43684717960A14006D2C05 /* CDAppDelegate.m in Sources */,
+				8B075EFE1798A63A008D4D1E /* CDFlagAndScrollableContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
