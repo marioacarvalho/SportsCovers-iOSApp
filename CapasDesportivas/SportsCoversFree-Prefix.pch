@@ -20,4 +20,7 @@
 #import "Header.h"
 #import "TestFlight.h"
 #import "CDCustomFontLabel.h"
+#import "CDServer.h"
+#import "CDGlobalHelpers.h"
+
 #endif

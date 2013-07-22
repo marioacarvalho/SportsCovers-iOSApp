@@ -14,26 +14,30 @@
 {
     NSArray *_scrollViewData;
     int _currentCollumn;
+    NSArray *pageImages;
 }
+
+
 - (id)initWithFrame:(CGRect)frame andWithArray:(NSArray *)information
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         
+        
     }
     return self;
 }
-
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
-    [self setupScrollView];
     _currentCollumn = 0;
     [self setPagingEnabled:YES];
+    // Drawing code
+    [self setupScrollView];
+
 }
 
 
@@ -68,7 +72,10 @@
 
 - (int)setupPagesForSelectedAllCountries
 {
+    NSMutableArray *tmpPages = [NSMutableArray new];
+
     NSMutableArray *tmpCollumnArray = [NSMutableArray new];
+    NSMutableArray *countriesCollumnsAndIds = [NSMutableArray new];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *data = [defaults objectForKey:kApplicationLinks];
     NSArray *links = [NSKeyedUnarchiver unarchiveObjectWithData:data];
@@ -84,23 +91,35 @@
             CDVerticalPaginatedScrollView *newScrollView = [self setupVerticalScrollViewForIndex:collumn andInfoNewspapers:tmpCollumnArray];
             newScrollView.collumn = collumn;
             newScrollView.scrollDelegate = self;
+            [tmpPages addObject:newScrollView];
             [self addSubview:newScrollView];
             collumn++;
+            NSDictionary *dic = @{@"id": [NSString stringWithFormat:@"%d", tmpCountrie ],
+                                  @"collumn": [NSString stringWithFormat:@"%d", collumn]};
+            [countriesCollumnsAndIds addObject:dic];
             tmpCollumnArray = [NSMutableArray new];
             [tmpCollumnArray addObject:newspaper];
             tmpCountrie = [[newspaper objectForKey:@"id"] intValue];
             CDVerticalPaginatedScrollView *newScrollView2 = [self setupVerticalScrollViewForIndex:collumn andInfoNewspapers:tmpCollumnArray];
             newScrollView2.collumn = collumn;
             newScrollView2.scrollDelegate = self;
+            [tmpPages addObject:newScrollView2];
             [self addSubview:newScrollView2];
             collumn++;
+            NSDictionary *dic2 = @{@"id": [NSString stringWithFormat:@"%d", tmpCountrie ],
+                                  @"collumn": [NSString stringWithFormat:@"%d", collumn]};
+            [countriesCollumnsAndIds addObject:dic2];
             
         }else {
             CDVerticalPaginatedScrollView *newScrollView = [self setupVerticalScrollViewForIndex:collumn andInfoNewspapers:tmpCollumnArray];
             newScrollView.collumn = collumn;
             newScrollView.scrollDelegate = self;
+            [tmpPages addObject:newScrollView];
             [self addSubview:newScrollView];
             collumn++;
+            NSDictionary *dic = @{@"id": [NSString stringWithFormat:@"%d", tmpCountrie ],
+                                  @"collumn": [NSString stringWithFormat:@"%d", collumn]};
+            [countriesCollumnsAndIds addObject:dic];
             tmpCollumnArray = [NSMutableArray new];
             [tmpCollumnArray addObject:newspaper];
             tmpCountrie = [[newspaper objectForKey:@"id"] intValue];
@@ -110,7 +129,9 @@
         
         
     }
-    
+    [defaults setObject:countriesCollumnsAndIds forKey:kAllCountriesIdsAndCollumnsRelation];
+    [defaults synchronize];
+    pageImages = tmpPages;
     return collumn;
 }
 
@@ -130,6 +151,10 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kCountriesNeedsVerticalScroll object:info];
 }
 
-
+-(void)scrollToCollumn:(int)collumn
+{
+    CDVerticalPaginatedScrollView *jumpPage = (CDVerticalPaginatedScrollView *)[self.subviews objectAtIndex:collumn-1];
+    [self scrollRectToVisible:jumpPage.frame animated:YES];
+}
 
 @end

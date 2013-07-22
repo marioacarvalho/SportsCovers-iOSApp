@@ -12,10 +12,12 @@
 
 - (id)initWithFrame:(CGRect)frame andWithArray:(NSArray *)information;
 
-@property (nonatomic, strong) NSArray *pageImages;
+@property NSArray *allCountriesCollumnsAndIds;
+
+
 @property (nonatomic, strong) NSMutableArray *pageViews;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
-
+-(void)scrollToCollumn:(int)collumn;
 -(void)goRight;
 @end

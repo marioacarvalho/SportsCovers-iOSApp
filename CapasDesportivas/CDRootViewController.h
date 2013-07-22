@@ -13,7 +13,7 @@
 #import "CDCountriesSelectorView.h"
 #import <iAd/iAd.h>
 #import "GADBannerView.h"
-
+#import "DRNRealTimeBlurView.h"
 @interface CDRootViewController : UIViewController<UIScrollViewDelegate, ADBannerViewDelegate>
 {
     GADBannerView *bannerView_;
@@ -25,13 +25,13 @@
 
 @property (weak, nonatomic) IBOutlet UIView *countriesGesturesView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIButton *menuBtn;
+@property (weak, nonatomic) IBOutlet UIButton *menuBtn; 
 
 @property (weak, nonatomic) IBOutlet CDCustomFontLabel *currentDayLabel;
 @property (weak, nonatomic) IBOutlet CDCustomFontLabel *currentMonthLabel;
 @property (strong, nonatomic) IBOutlet CDBidirectionalScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-
+@property (strong, nonatomic) DRNRealTimeBlurView *blurView;
 @property (strong, nonatomic) CDCountriesSelectorView *countriesSelectorView;
 @property (weak, nonatomic) IBOutlet ADBannerView *iAdBanner;
 @property (strong, nonatomic) IBOutlet CDRemoteControlledBidirectionalScrollView *countriesBidirectionalScrollView;

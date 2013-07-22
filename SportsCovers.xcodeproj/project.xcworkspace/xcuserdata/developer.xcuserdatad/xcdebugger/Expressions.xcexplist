@@ -19,6 +19,22 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[CDBidirectionalScrollView scrollToCollumn:]:CDBidirectionalScrollView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.subviews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CDRootViewController jumpToCountry:]:CDRootViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.scrollView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CDCountriesSelectorSingleView didMoveToSuperview]:CDCountriesSelectorSingleView.m">
          <PersistentStrings>
             <PersistentString

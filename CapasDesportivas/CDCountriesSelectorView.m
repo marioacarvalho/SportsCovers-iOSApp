@@ -12,6 +12,7 @@
 #import "UIFont+UIFont_CustomSystemFont.h"
 #import "CDMainCoverView.h"
 
+
 @implementation CDCountriesSelectorView
 {
     UITapGestureRecognizer *tap;
@@ -43,9 +44,11 @@
     [background setBackgroundColor:[UIColor blackColor]];
     [background setAlpha:0.4f];
     [self addSubview:background];
+
+    
     _scrollView = [[UIScrollView alloc] initWithFrame:rect];
     [self setupScrollView];
-    
+
     /**/
     
     self.scrollView.delegate = self;
@@ -57,6 +60,8 @@
     // 5
     [self loadVisiblePages];
     [self addSubview:_scrollView];
+    
+
 
 }
 
@@ -99,12 +104,14 @@
         [allData addObject:newspaper];
         [tmpStack addObject:newspaper];
         i++;
-        if ((i % 6 == 0 && i != 0) || [links count] - i == 1) {
+        if ((i % 6 == 0 && i != 0) || [links count] - i == 0) {
             CDCountriesSelectorSingleView *countrieSingleView = [[CDCountriesSelectorSingleView alloc] initWithFrame:CGRectMake(0, 0, kSupporterWidth, kSupporterHeight)];
             countrieSingleView.countriesInfo = [[NSArray alloc] initWithArray:tmpStack];
             [mutArray addObject:countrieSingleView];
             tmpStack = [NSMutableArray new];
+            countrieSingleView.userInteractionEnabled = YES;
         }
+
                 
     }
     _myArray = allData;

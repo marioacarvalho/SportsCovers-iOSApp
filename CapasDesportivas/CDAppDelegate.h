@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 #import "IIViewDeckController.h"
-@interface CDAppDelegate : UIResponder <UIApplicationDelegate>
+#import "Appirater.h"
+
+@interface CDAppDelegate : UIResponder <UIApplicationDelegate, AppiraterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) IIViewDeckController *deck;

@@ -79,7 +79,7 @@ typedef enum ScrollDirection {
 
 - (void)viewDidLoad
 {
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jumpToCountry:) name:kJumpToCountry object:nil];
     _lastContentOffsetX = 0;
     _lastContentOffsetY = 0;
     selectedCountryID = 173;
@@ -87,7 +87,6 @@ typedef enum ScrollDirection {
     NSData *data = [defaults objectForKey:kApplicationLinks];
     NSArray *links = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     self.scrollView = [[CDBidirectionalScrollView alloc] initWithFrame:_scrollView.frame andWithArray:links];
-    
     self.countriesBidirectionalScrollView.scrollViewData = links;
     [self.countriesBidirectionalScrollView setBackgroundColor:[UIColor clearColor]];
     self.countriesBidirectionalScrollView.delegate = self;
@@ -166,11 +165,15 @@ typedef enum ScrollDirection {
         if (_countriesSelectorView == nil) {
             CGRect screenRect = [[UIScreen mainScreen] bounds];
             _countriesSelectorView = [[CDCountriesSelectorView alloc] initWithFrame:CGRectMake(0, screenRect.size.height, kSupporterWidth, kSupporterHeight)];
+          //  _blurView = [[DRNRealTimeBlurView alloc] initWithFrame:CGRectMake(0, screenRect.size.height, kSupporterWidth, kSupporterHeight)];
+         //   [self.view addSubview:_blurView];
             [self.view addSubview:_countriesSelectorView];
             [self slideInCountries];
         } else {
             [_countriesSelectorView removeFromSuperview];
             _countriesSelectorView = nil;
+         //   [_blurView removeFromSuperview];
+         //   _blurView = nil;
             [self countriesAction:nil];
         }
     } else {
@@ -180,8 +183,12 @@ typedef enum ScrollDirection {
 
 - (void)slideInCountries
 {
+    
     [UIView animateWithDuration:.15 animations:^{
-        [_countriesSelectorView setFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - kSupporterHeight, kSupporterWidth, kSupporterHeight)];
+        CGRect rect = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - kSupporterHeight, kSupporterWidth, kSupporterHeight);
+        //[_blurView setFrame:rect];
+        [_countriesSelectorView setFrame:rect];
+        
     } completion:^(BOOL finished) {
         if (finished) {
             for (CDCountriesSelectorSingleView *view in _countriesSelectorView.pageViews) {
@@ -195,13 +202,17 @@ typedef enum ScrollDirection {
 - (void)slideOutCountries
 {
     [UIView animateWithDuration:.15 animations:^{
-        [_countriesSelectorView setFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height, kSupporterWidth, kSupporterHeight)];
+        CGRect rect = CGRectMake(0, [[UIScreen mainScreen] bounds].size.height, kSupporterWidth, kSupporterHeight);
+        [_countriesSelectorView setFrame:rect];
+       // [_blurView setFrame:rect];
     } completion:^(BOOL finished) {
         [_countriesSelectorView removeFromSuperview];
         _countriesSelectorView = nil;
+      //  [_blurView removeFromSuperview];
+      //  _blurView = nil;
         countriesSelector = NO;
     }];
-
+    
 }
 
 - (void)getNextCountrie
@@ -218,13 +229,11 @@ typedef enum ScrollDirection {
         }
     }
 }
-
 /*
  *
  * iAds
  *
  */
-
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
     NSLog(@"ok bannerView\n");
@@ -283,8 +292,48 @@ typedef enum ScrollDirection {
     CGFloat countriesOffsetX = (scrollView.contentOffset.x * _countriesBidirectionalScrollView.bounds.size.width)/scrollView.bounds.size.width;
     NSLog(@"%f\n", countriesOffsetX);
     [_countriesBidirectionalScrollView scrollRectToVisible:CGRectMake(countriesOffsetX, 0, _countriesBidirectionalScrollView.frame.size.width, _countriesBidirectionalScrollView.frame.size.height) animated:NO];
+    //self.scrollView = (CDBidirectionalScrollView *)scrollView;
 }
 
+-(void)jumpToCountry:(NSNotification *)notification
+{
 
+    int collumn = [self countryCollumnForID:notification.object];
+    if (collumn != -1) {
+        CDVerticalPaginatedScrollView *verticalSV = [self viewForCollumn:collumn];
+        if (verticalSV != nil) {
+            [self slideOutCountries];
+            [self.scrollView setContentOffset:verticalSV.frame.origin animated:YES];
+        }
+        
+    } else {
+#warning NEEDS USER ID
+        [TestFlight passCheckpoint:@"error jump to country"];
+        [self slideOutCountries];
+    }
+}
+
+-(int)countryCollumnForID:(NSString *)countryID
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *array = [defaults objectForKey:kAllCountriesIdsAndCollumnsRelation];
+    for (NSDictionary *dic in array) {
+        if ([[dic objectForKey:@"id"] isEqualToString:countryID]) {
+            return [[dic objectForKey:@"collumn"] intValue];
+        }
+    }
+    return -1;
+}
+
+-(CDVerticalPaginatedScrollView *)viewForCollumn:(int)collumn
+{
+    for (UIView *theview in self.view.subviews) {
+        if ([theview isKindOfClass:[CDBidirectionalScrollView class]]) {
+            self.scrollView = (CDBidirectionalScrollView *)theview;
+            return [[theview subviews] objectAtIndex:collumn-1];
+        }
+    }
+    return nil;
+}
 
 @end

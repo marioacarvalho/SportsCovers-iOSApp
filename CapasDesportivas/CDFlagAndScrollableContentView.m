@@ -37,7 +37,6 @@
     
     [self addSubview:_countryFlag];
     
-    [self setBackgroundColor:[UIColor clearColor]];
     _countryName = [[CDCustomFontLabel alloc]initWithFrame:CGRectMake(75, 5, self.frame.size.width, kCountryNameLabelHeight)];
     [_countryName setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:30]];
     [_countryName setText:[[_data lastObject] objectForKey:@"name_en"]];

@@ -22,6 +22,12 @@
 		8B075EFE1798A63A008D4D1E /* CDFlagAndScrollableContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075EFC1798A63A008D4D1E /* CDFlagAndScrollableContentView.m */; };
 		8B075F011798A65E008D4D1E /* CDCountriesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075F001798A65E008D4D1E /* CDCountriesScrollView.m */; };
 		8B075F021798A65E008D4D1E /* CDCountriesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B075F001798A65E008D4D1E /* CDCountriesScrollView.m */; };
+		8B12C1DD179B36B100545D41 /* CDCountryAvatarAndNameButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B12C1DC179B36B100545D41 /* CDCountryAvatarAndNameButton.m */; };
+		8B12C1DE179B36B100545D41 /* CDCountryAvatarAndNameButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B12C1DC179B36B100545D41 /* CDCountryAvatarAndNameButton.m */; };
+		8B12C1EC179B549F00545D41 /* DRNRealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B12C1E9179B549F00545D41 /* DRNRealTimeBlurView.m */; };
+		8B12C1ED179B549F00545D41 /* DRNRealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B12C1E9179B549F00545D41 /* DRNRealTimeBlurView.m */; };
+		8B12C1EE179B549F00545D41 /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B12C1EB179B549F00545D41 /* UIImage+BoxBlur.m */; };
+		8B12C1EF179B549F00545D41 /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B12C1EB179B549F00545D41 /* UIImage+BoxBlur.m */; };
 		8B3197BF178640CB00E0A8D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3197BE178640CB00E0A8D1 /* Foundation.framework */; };
 		8B3197C1178640CB00E0A8D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3197C0178640CB00E0A8D1 /* CoreGraphics.framework */; };
 		8B3197C3178640CB00E0A8D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3197C2178640CB00E0A8D1 /* UIKit.framework */; };
@@ -42,7 +48,7 @@
 		8B43678D1795D491006D2C05 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B43678C1795D491006D2C05 /* libsqlite3.dylib */; };
 		8B4368241795E227006D2C05 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4367F31795E227006D2C05 /* libGoogleAdMobAds.a */; };
 		8B4368251795E227006D2C05 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8B4367F41795E227006D2C05 /* README.txt */; };
-		8B43682A1795E61D006D2C05 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4368291795E61D006D2C05 /* StoreKit.framework */; };
+		8B43682A1795E61D006D2C05 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4368291795E61D006D2C05 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8B43682C1795E625006D2C05 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B43682B1795E625006D2C05 /* AudioToolbox.framework */; };
 		8B43682E1795E62B006D2C05 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B43682D1795E62A006D2C05 /* MessageUI.framework */; };
 		8B4368351795FA29006D2C05 /* CoverSupporter2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4368331795FA29006D2C05 /* CoverSupporter2.png */; };
@@ -50,7 +56,6 @@
 		8B43683A17960A14006D2C05 /* CDCountriesSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFA3A2178E0BC100AA03EB /* CDCountriesSelectorView.m */; };
 		8B43683B17960A14006D2C05 /* CDCountriesSelectorSingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFA3A5178E2FD900AA03EB /* CDCountriesSelectorSingleView.m */; };
 		8B43683C17960A14006D2C05 /* CDCountriesControlView.h in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBA7F1178A0E6300F53A7A /* CDCountriesControlView.h */; };
-		8B43683D17960A14006D2C05 /* UIImage+StackBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9512851794CD5400C7CAFD /* UIImage+StackBlur.m */; };
 		8B43683E17960A14006D2C05 /* UIFont+UIFont_CustomSystemFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B852DF71789DD030095A41F /* UIFont+UIFont_CustomSystemFont.m */; };
 		8B43683F17960A14006D2C05 /* MHFacebookImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0277A917885E8D00EAF349 /* MHFacebookImageViewer.m */; };
 		8B43684017960A14006D2C05 /* CDCustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B852DF21789D13A0095A41F /* CDCustomFontLabel.m */; };
@@ -89,7 +94,7 @@
 		8B43686317960A14006D2C05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3197C0178640CB00E0A8D1 /* CoreGraphics.framework */; };
 		8B43686417960A14006D2C05 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B43682D1795E62A006D2C05 /* MessageUI.framework */; };
 		8B43686517960A14006D2C05 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B43682B1795E625006D2C05 /* AudioToolbox.framework */; };
-		8B43686617960A14006D2C05 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4368291795E61D006D2C05 /* StoreKit.framework */; };
+		8B43686617960A14006D2C05 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4368291795E61D006D2C05 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8B43686717960A14006D2C05 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B43678C1795D491006D2C05 /* libsqlite3.dylib */; };
 		8B43686817960A14006D2C05 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B43677C1795CDF5006D2C05 /* iAd.framework */; };
 		8B43686917960A14006D2C05 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0277A41788578200EAF349 /* QuartzCore.framework */; };
@@ -116,13 +121,22 @@
 		8B70D73E178CF01E008A722C /* unitedkingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B70D73C178CF01E008A722C /* unitedkingdom.png */; };
 		8B70D73F178CF01E008A722C /* unitedkingdom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B70D73D178CF01E008A722C /* unitedkingdom@2x.png */; };
 		8B73607717887B7A0067008C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B73607617887B7A0067008C /* Crashlytics.framework */; };
+		8B7CC3D8179C5A7E008A5039 /* CDMainIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CC3D6179C5A7E008A5039 /* CDMainIntroViewController.m */; };
+		8B7CC3D9179C5A7E008A5039 /* CDMainIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CC3D6179C5A7E008A5039 /* CDMainIntroViewController.m */; };
+		8B7CC3DA179C5A7E008A5039 /* CDMainIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7CC3D7179C5A7E008A5039 /* CDMainIntroViewController.xib */; };
+		8B7CC3DB179C5A7E008A5039 /* CDMainIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B7CC3D7179C5A7E008A5039 /* CDMainIntroViewController.xib */; };
+		8B7CC3FE179C91C9008A5039 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CC3FC179C91C9008A5039 /* Appirater.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		8B7CC3FF179C91C9008A5039 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CC3FC179C91C9008A5039 /* Appirater.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		8B7CC403179C977D008A5039 /* CDServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CC402179C977D008A5039 /* CDServer.m */; };
+		8B7CC404179C977D008A5039 /* CDServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CC402179C977D008A5039 /* CDServer.m */; };
+		8B7CC407179C9E72008A5039 /* CDGlobalHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CC406179C9E72008A5039 /* CDGlobalHelpers.m */; };
+		8B7CC408179C9E72008A5039 /* CDGlobalHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7CC406179C9E72008A5039 /* CDGlobalHelpers.m */; };
 		8B852DF31789D13A0095A41F /* CDCustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B852DF21789D13A0095A41F /* CDCustomFontLabel.m */; };
 		8B852DF81789DD030095A41F /* UIFont+UIFont_CustomSystemFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B852DF71789DD030095A41F /* UIFont+UIFont_CustomSystemFont.m */; };
 		8B8588AA1797550C00D33FF3 /* CDBidirectionalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8588A91797550C00D33FF3 /* CDBidirectionalScrollView.m */; };
 		8B8588AB1797550C00D33FF3 /* CDBidirectionalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8588A91797550C00D33FF3 /* CDBidirectionalScrollView.m */; };
 		8B8588B5179755F700D33FF3 /* CDVerticalPaginatedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8588B4179755F700D33FF3 /* CDVerticalPaginatedScrollView.m */; };
 		8B8588B6179755F700D33FF3 /* CDVerticalPaginatedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8588B4179755F700D33FF3 /* CDVerticalPaginatedScrollView.m */; };
-		8B9512861794CD5400C7CAFD /* UIImage+StackBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9512851794CD5400C7CAFD /* UIImage+StackBlur.m */; };
 		8BCBA7E31789FBEF00F53A7A /* CDMainCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBA7E21789FBEF00F53A7A /* CDMainCoverView.m */; };
 		8BCBA7F5178A0EED00F53A7A /* CDCountrieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBA7F4178A0EED00F53A7A /* CDCountrieView.m */; };
 		8BCBA7F6178A16E100F53A7A /* CDCountriesControlView.h in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBA7F1178A0E6300F53A7A /* CDCountriesControlView.h */; };
@@ -219,6 +233,12 @@
 		8B075EFC1798A63A008D4D1E /* CDFlagAndScrollableContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFlagAndScrollableContentView.m; sourceTree = "<group>"; };
 		8B075EFF1798A65E008D4D1E /* CDCountriesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDCountriesScrollView.h; path = Components/CustomClasses/CDCountriesScrollView.h; sourceTree = "<group>"; };
 		8B075F001798A65E008D4D1E /* CDCountriesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDCountriesScrollView.m; path = Components/CustomClasses/CDCountriesScrollView.m; sourceTree = "<group>"; };
+		8B12C1DB179B36B100545D41 /* CDCountryAvatarAndNameButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDCountryAvatarAndNameButton.h; path = Components/CustomObjects/CDCountryAvatarAndNameButton.h; sourceTree = "<group>"; };
+		8B12C1DC179B36B100545D41 /* CDCountryAvatarAndNameButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDCountryAvatarAndNameButton.m; path = Components/CustomObjects/CDCountryAvatarAndNameButton.m; sourceTree = "<group>"; };
+		8B12C1E8179B549F00545D41 /* DRNRealTimeBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNRealTimeBlurView.h; sourceTree = "<group>"; };
+		8B12C1E9179B549F00545D41 /* DRNRealTimeBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNRealTimeBlurView.m; sourceTree = "<group>"; };
+		8B12C1EA179B549F00545D41 /* UIImage+BoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BoxBlur.h"; sourceTree = "<group>"; };
+		8B12C1EB179B549F00545D41 /* UIImage+BoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BoxBlur.m"; sourceTree = "<group>"; };
 		8B3197BB178640CB00E0A8D1 /* SportsCovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsCovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B3197BE178640CB00E0A8D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8B3197C0178640CB00E0A8D1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -276,6 +296,16 @@
 		8B70D73C178CF01E008A722C /* unitedkingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unitedkingdom.png; sourceTree = "<group>"; };
 		8B70D73D178CF01E008A722C /* unitedkingdom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unitedkingdom@2x.png"; sourceTree = "<group>"; };
 		8B73607617887B7A0067008C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		8B7CC3D5179C5A7E008A5039 /* CDMainIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMainIntroViewController.h; path = Controllers/CDMainIntroViewController.h; sourceTree = "<group>"; };
+		8B7CC3D6179C5A7E008A5039 /* CDMainIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMainIntroViewController.m; path = Controllers/CDMainIntroViewController.m; sourceTree = "<group>"; };
+		8B7CC3D7179C5A7E008A5039 /* CDMainIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CDMainIntroViewController.xib; path = Controllers/CDMainIntroViewController.xib; sourceTree = "<group>"; };
+		8B7CC3FB179C91C9008A5039 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		8B7CC3FC179C91C9008A5039 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		8B7CC3FD179C91C9008A5039 /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
+		8B7CC401179C977D008A5039 /* CDServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDServer.h; path = Models/CDServer.h; sourceTree = "<group>"; };
+		8B7CC402179C977D008A5039 /* CDServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDServer.m; path = Models/CDServer.m; sourceTree = "<group>"; };
+		8B7CC405179C9E72008A5039 /* CDGlobalHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDGlobalHelpers.h; path = Helpers/CDGlobalHelpers.h; sourceTree = "<group>"; };
+		8B7CC406179C9E72008A5039 /* CDGlobalHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDGlobalHelpers.m; path = Helpers/CDGlobalHelpers.m; sourceTree = "<group>"; };
 		8B80F7031788422C00CA9123 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8B852DF11789D13A0095A41F /* CDCustomFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDCustomFontLabel.h; path = Components/CustomObjects/CDCustomFontLabel.h; sourceTree = "<group>"; };
 		8B852DF21789D13A0095A41F /* CDCustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDCustomFontLabel.m; path = Components/CustomObjects/CDCustomFontLabel.m; sourceTree = "<group>"; };
@@ -285,8 +315,6 @@
 		8B8588A91797550C00D33FF3 /* CDBidirectionalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDBidirectionalScrollView.m; path = Components/CustomClasses/CDBidirectionalScrollView.m; sourceTree = "<group>"; };
 		8B8588B3179755F700D33FF3 /* CDVerticalPaginatedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVerticalPaginatedScrollView.h; path = Components/CustomClasses/CDVerticalPaginatedScrollView.h; sourceTree = "<group>"; };
 		8B8588B4179755F700D33FF3 /* CDVerticalPaginatedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVerticalPaginatedScrollView.m; path = Components/CustomClasses/CDVerticalPaginatedScrollView.m; sourceTree = "<group>"; };
-		8B9512841794CD5400C7CAFD /* UIImage+StackBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+StackBlur.h"; path = "Components/CustomClasses/UIImage+StackBlur.h"; sourceTree = "<group>"; };
-		8B9512851794CD5400C7CAFD /* UIImage+StackBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+StackBlur.m"; path = "Components/CustomClasses/UIImage+StackBlur.m"; sourceTree = "<group>"; };
 		8BCBA7E11789FBEF00F53A7A /* CDMainCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMainCoverView.h; sourceTree = "<group>"; };
 		8BCBA7E21789FBEF00F53A7A /* CDMainCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMainCoverView.m; sourceTree = "<group>"; };
 		8BCBA7ED1789FEA500F53A7A /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Header.h; path = Helpers/Header.h; sourceTree = "<group>"; };
@@ -402,6 +430,18 @@
 			path = CapasDesportivas/Frameworks/TestFlightSDK1.2.6;
 			sourceTree = "<group>";
 		};
+		8B12C1E7179B549F00545D41 /* RealTimeBlur */ = {
+			isa = PBXGroup;
+			children = (
+				8B12C1E8179B549F00545D41 /* DRNRealTimeBlurView.h */,
+				8B12C1E9179B549F00545D41 /* DRNRealTimeBlurView.m */,
+				8B12C1EA179B549F00545D41 /* UIImage+BoxBlur.h */,
+				8B12C1EB179B549F00545D41 /* UIImage+BoxBlur.m */,
+			);
+			name = RealTimeBlur;
+			path = Frameworks/RealTimeBlur;
+			sourceTree = "<group>";
+		};
 		8B3197B2178640CB00E0A8D1 = {
 			isa = PBXGroup;
 			children = (
@@ -467,9 +507,8 @@
 				8BCFA3A5178E2FD900AA03EB /* CDCountriesSelectorSingleView.m */,
 				8BCFA3A1178E0BC100AA03EB /* CDCountriesSelectorView.h */,
 				8BCFA3A2178E0BC100AA03EB /* CDCountriesSelectorView.m */,
-				8B3198481786428000E0A8D1 /* CDRootViewController.h */,
-				8B3198491786428000E0A8D1 /* CDRootViewController.m */,
-				8B31984A1786428000E0A8D1 /* CDRootViewController.xib */,
+				8B7CC400179C9763008A5039 /* Models */,
+				8B7CC3D3179C5A0D008A5039 /* Controllers */,
 				8BEF75801788462B0015E07F /* CDMainCell.xib */,
 				8B3197D0178640CB00E0A8D1 /* Images.xcassets */,
 				8B3197C5178640CB00E0A8D1 /* Supporting Files */,
@@ -555,9 +594,43 @@
 			path = Flags;
 			sourceTree = "<group>";
 		};
+		8B7CC3D3179C5A0D008A5039 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B7CC3D5179C5A7E008A5039 /* CDMainIntroViewController.h */,
+				8B7CC3D6179C5A7E008A5039 /* CDMainIntroViewController.m */,
+				8B7CC3D7179C5A7E008A5039 /* CDMainIntroViewController.xib */,
+				8B3198481786428000E0A8D1 /* CDRootViewController.h */,
+				8B3198491786428000E0A8D1 /* CDRootViewController.m */,
+				8B31984A1786428000E0A8D1 /* CDRootViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8B7CC3FA179C91C9008A5039 /* Appirater */ = {
+			isa = PBXGroup;
+			children = (
+				8B7CC3FB179C91C9008A5039 /* Appirater.h */,
+				8B7CC3FC179C91C9008A5039 /* Appirater.m */,
+				8B7CC3FD179C91C9008A5039 /* AppiraterDelegate.h */,
+			);
+			name = Appirater;
+			path = Components/Appirater;
+			sourceTree = "<group>";
+		};
+		8B7CC400179C9763008A5039 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B7CC401179C977D008A5039 /* CDServer.h */,
+				8B7CC402179C977D008A5039 /* CDServer.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8B852DE81789D1060095A41F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8B12C1E7179B549F00545D41 /* RealTimeBlur */,
 				8B852DF41789DCC00095A41F /* CustomClasses */,
 				8B852DF01789D10F0095A41F /* CustomObjects */,
 			);
@@ -579,6 +652,8 @@
 				8B8588A91797550C00D33FF3 /* CDBidirectionalScrollView.m */,
 				8B8588B3179755F700D33FF3 /* CDVerticalPaginatedScrollView.h */,
 				8B8588B4179755F700D33FF3 /* CDVerticalPaginatedScrollView.m */,
+				8B12C1DB179B36B100545D41 /* CDCountryAvatarAndNameButton.h */,
+				8B12C1DC179B36B100545D41 /* CDCountryAvatarAndNameButton.m */,
 			);
 			name = CustomObjects;
 			sourceTree = "<group>";
@@ -588,8 +663,6 @@
 			children = (
 				8B852DF61789DD030095A41F /* UIFont+UIFont_CustomSystemFont.h */,
 				8B852DF71789DD030095A41F /* UIFont+UIFont_CustomSystemFont.m */,
-				8B9512841794CD5400C7CAFD /* UIImage+StackBlur.h */,
-				8B9512851794CD5400C7CAFD /* UIImage+StackBlur.m */,
 			);
 			name = CustomClasses;
 			sourceTree = "<group>";
@@ -614,7 +687,10 @@
 		8BCBA7EC1789FE8800F53A7A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8B7CC3FA179C91C9008A5039 /* Appirater */,
 				8BCBA7ED1789FEA500F53A7A /* Header.h */,
+				8B7CC405179C9E72008A5039 /* CDGlobalHelpers.h */,
+				8B7CC406179C9E72008A5039 /* CDGlobalHelpers.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -786,6 +862,7 @@
 				8B70D73F178CF01E008A722C /* unitedkingdom@2x.png in Resources */,
 				8BCFA39A178E001D00AA03EB /* brazil.png in Resources */,
 				8B70D730178CDA91008A722C /* spain@2x.png in Resources */,
+				8B7CC3DA179C5A7E008A5039 /* CDMainIntroViewController.xib in Resources */,
 				8B4C8011178A29F2001FAE80 /* portugal@2x.png in Resources */,
 				8BCFA39B178E001D00AA03EB /* brazil@2x.png in Resources */,
 				8B31984C1786428000E0A8D1 /* CDRootViewController.xib in Resources */,
@@ -817,6 +894,7 @@
 				8B43684917960A14006D2C05 /* unitedkingdom@2x.png in Resources */,
 				8B43684A17960A14006D2C05 /* brazil.png in Resources */,
 				8B43684B17960A14006D2C05 /* spain@2x.png in Resources */,
+				8B7CC3DB179C5A7E008A5039 /* CDMainIntroViewController.xib in Resources */,
 				8B43684C17960A14006D2C05 /* portugal@2x.png in Resources */,
 				8B43684D17960A14006D2C05 /* brazil@2x.png in Resources */,
 				8B43684E17960A14006D2C05 /* CDRootViewController.xib in Resources */,
@@ -942,9 +1020,12 @@
 				8BCFA3A6178E2FD900AA03EB /* CDCountriesSelectorSingleView.m in Sources */,
 				8B8588B5179755F700D33FF3 /* CDVerticalPaginatedScrollView.m in Sources */,
 				8B8588AA1797550C00D33FF3 /* CDBidirectionalScrollView.m in Sources */,
+				8B12C1DD179B36B100545D41 /* CDCountryAvatarAndNameButton.m in Sources */,
+				8B7CC3FE179C91C9008A5039 /* Appirater.m in Sources */,
 				8BCBA7F6178A16E100F53A7A /* CDCountriesControlView.h in Sources */,
-				8B9512861794CD5400C7CAFD /* UIImage+StackBlur.m in Sources */,
 				8B852DF81789DD030095A41F /* UIFont+UIFont_CustomSystemFont.m in Sources */,
+				8B7CC407179C9E72008A5039 /* CDGlobalHelpers.m in Sources */,
+				8B7CC3D8179C5A7E008A5039 /* CDMainIntroViewController.m in Sources */,
 				8B0277AA17885E8D00EAF349 /* MHFacebookImageViewer.m in Sources */,
 				8B852DF31789D13A0095A41F /* CDCustomFontLabel.m in Sources */,
 				8BCBA7E31789FBEF00F53A7A /* CDMainCoverView.m in Sources */,
@@ -953,9 +1034,12 @@
 				8B3197CB178640CB00E0A8D1 /* main.m in Sources */,
 				8BCBA7F5178A0EED00F53A7A /* CDCountrieView.m in Sources */,
 				8B075F011798A65E008D4D1E /* CDCountriesScrollView.m in Sources */,
+				8B7CC403179C977D008A5039 /* CDServer.m in Sources */,
 				8B075EEB17989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.m in Sources */,
+				8B12C1EC179B549F00545D41 /* DRNRealTimeBlurView.m in Sources */,
 				8B4C8002178A185C001FAE80 /* CDCountriesControlView.m in Sources */,
 				8B3197CF178640CB00E0A8D1 /* CDAppDelegate.m in Sources */,
+				8B12C1EE179B549F00545D41 /* UIImage+BoxBlur.m in Sources */,
 				8B075EFD1798A63A008D4D1E /* CDFlagAndScrollableContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -969,9 +1053,12 @@
 				8B43683B17960A14006D2C05 /* CDCountriesSelectorSingleView.m in Sources */,
 				8B8588B6179755F700D33FF3 /* CDVerticalPaginatedScrollView.m in Sources */,
 				8B8588AB1797550C00D33FF3 /* CDBidirectionalScrollView.m in Sources */,
+				8B12C1DE179B36B100545D41 /* CDCountryAvatarAndNameButton.m in Sources */,
+				8B7CC3FF179C91C9008A5039 /* Appirater.m in Sources */,
 				8B43683C17960A14006D2C05 /* CDCountriesControlView.h in Sources */,
-				8B43683D17960A14006D2C05 /* UIImage+StackBlur.m in Sources */,
 				8B43683E17960A14006D2C05 /* UIFont+UIFont_CustomSystemFont.m in Sources */,
+				8B7CC408179C9E72008A5039 /* CDGlobalHelpers.m in Sources */,
+				8B7CC3D9179C5A7E008A5039 /* CDMainIntroViewController.m in Sources */,
 				8B43683F17960A14006D2C05 /* MHFacebookImageViewer.m in Sources */,
 				8B43684017960A14006D2C05 /* CDCustomFontLabel.m in Sources */,
 				8B43684117960A14006D2C05 /* CDMainCoverView.m in Sources */,
@@ -980,9 +1067,12 @@
 				8B43684417960A14006D2C05 /* main.m in Sources */,
 				8B43684517960A14006D2C05 /* CDCountrieView.m in Sources */,
 				8B075F021798A65E008D4D1E /* CDCountriesScrollView.m in Sources */,
+				8B7CC404179C977D008A5039 /* CDServer.m in Sources */,
 				8B075EEC17989DE6008D4D1E /* CDRemoteControlledBidirectionalScrollView.m in Sources */,
+				8B12C1ED179B549F00545D41 /* DRNRealTimeBlurView.m in Sources */,
 				8B43684617960A14006D2C05 /* CDCountriesControlView.m in Sources */,
 				8B43684717960A14006D2C05 /* CDAppDelegate.m in Sources */,
+				8B12C1EF179B549F00545D41 /* UIImage+BoxBlur.m in Sources */,
 				8B075EFE1798A63A008D4D1E /* CDFlagAndScrollableContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1116,6 +1206,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CapasDesportivas/SportsCovers-Prefix.pch";
 				INFOPLIST_FILE = "CapasDesportivas/SportsCovers-Info.plist";
